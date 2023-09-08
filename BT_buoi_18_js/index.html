@@ -8,7 +8,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="./style.css">
   </head>
   <style>
    
@@ -59,7 +59,7 @@
     
         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
           <div class="card-body">
-           <button class="btn btn-info"> Tính tổng</button>
+           <button class="btn btn-info" id="tinhtongduong"> Tính tổng</button>
           </div>
           <div class="alert alert-success">
         <span id="showketqua" class="lg-success"></span>
@@ -76,10 +76,10 @@
         </div>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
           <div class="card-body">
-            <button class="btn btn-info"> Tính tổng</button>
+            <button class="btn btn-info" onclick="bai2()">Đếm số </button>
            </div>
            <div class="alert alert-success">
-         <span id="showketqua" class="lg-success"></span>
+         <span id="demsoduong" class="lg-success"></span>
            </div>
          </div>
         </div>
@@ -94,10 +94,10 @@
         </div>
         <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
           <div class="card-body">
-            <button class="btn btn-info"> Tính tổng</button>
+            <button class="btn btn-info" onclick="checkmin()"> Tìm số nhỏ nhất </button>
            </div>
            <div class="alert alert-success">
-         <span id="showketqua" class="lg-success"></span>
+         <span id="sonhonhat" class="lg-success"></span>
            </div>
          </div>
         </div>
@@ -113,10 +113,10 @@
     </div>
     <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
       <div class="card-body">
-        <button class="btn btn-info"> Tính tổng</button>
+        <button class="btn btn-info" onclick="checkmin11()">Tìm số dương nhỏ nhất </button>
       </div>
       <div class="alert alert-success">
-        <span id="showketqua" class="lg-success"></span>
+        <span id="soduongmin" class="lg-success"></span>
           </div>
     </div>
   </div>
@@ -131,9 +131,9 @@
   </div>
   <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
     <div class="card-body">
-      <button class="btn btn-info"> Tính tổng</button>   </div>
+      <button class="btn btn-info" onclick="bai5()"> Tìm số chẵn </button>   </div>
       <div class="alert alert-success">
-        <span id="showketqua" class="lg-success"></span>
+        <span id="sochancuoi" class="lg-success"></span>
           </div>
   </div>
 </div>
@@ -147,7 +147,7 @@
   </div>
   <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
     <div class="card-body">
-      <button class="btn btn-info"> Tính tổng</button>
+      <button class="btn btn-info" onclick="bai6()">Đổi chỗ </button>
 
     </div>
     <div class="alert alert-success">
@@ -166,10 +166,10 @@
         </div>
         <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordionExample">
           <div class="card-body">
-            <button class="btn btn-info"> Tính tổng</button>   
+            <button class="btn btn-info" onclick="bai7()">Sắp xếp </button>   
            </div>
           <div class="alert alert-success">
-            <span id="showketqua" class="lg-success"></span>
+            <span id="sapxepmang" class="lg-success"></span>
               </div>
         </div>
       </div>
@@ -184,11 +184,11 @@
     </div>
     <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordionExample">
       <div class="card-body">
-        <button class="btn btn-info"> Tính tổng</button>
+        <button class="btn btn-info" onclick="bai8()"> Tìm số nguyên tố </button>
       </div>
   
     <div class="alert alert-success">
-  <span id="showketqua" class="lg-success"></span>
+  <span id="ktsont" class="lg-success"></span>
     </div>
     </div>
   </div>
@@ -204,10 +204,10 @@
     </div>
     <div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#accordionExample">
       <div class="card-body">
-        <button class="btn btn-info"> Tính tổng</button>
+        <button class="btn btn-info" onclick="count_interger()"> Đếm số nguyên </button>
       </div>
       <div class="alert alert-success">
-        <span id="showketqua" class="lg-success"></span>
+        <span id="demsonguyen" class="lg-success"></span>
           </div>
     </div>
   </div>
@@ -222,10 +222,10 @@
     </div>
     <div id="collapseTen" class="collapse" aria-labelledby="headingTen" data-parent="#accordionExample">
       <div class="card-body">
-        <button class="btn btn-info"> Tính tổng</button>
+        <button class="btn btn-info" onclick="bai10()"> So sánh </button>
       </div>
            <div class="alert alert-success">
-            <span id="showketqua" class="lg-success"></span>
+            <span id="sosanh" class="lg-success"></span>
                </div>
     </div>
   </div>
