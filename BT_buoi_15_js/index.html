@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <div class="container">
+<h2> Bài 1 : Quản lý tuyển sinh </h2> 
+<br>
+<div class="row">
+<div class="col-4">
+    <div class="form-group">
+    <input type="text" placeholder="Điểm chuẩn" id="diemchuan">
+    <br>
+    <br>
+    <input type="number" name ="number " placeholder="Điểm môn thứ nhất " id="diem1">
+    </div>
+</div>
+<div class="col-4">
+    <div class="form-group">
+       <select name="" id="khuvuc" class="tuychon">
+        <option  value="">CHỌN KHU VỰC</option>
+       
+        <option value="2">A</option>
+        <option value="1">B</option>
+        <option value="0.5">C</option>
+     
+       </select>
+        <br>
+        <br>
+        <input type="number" name ="number " placeholder="Điểm môn thứ hai " id="diem2">
+    </div>
+</div>
+<div class="col-4">
+    <div class="form-group">
+        <select  id="doituong" name="" class="tuychon2">
+            <option value="">CHỌN ĐỐI TƯỢNG</option>
+           
+            <option value="2.5">1</option>
+            <option value="1.5">2</option>
+            <option value="1">3</option>
+         
+           </select>
+        <br>
+        <br>
+        <input type="number" name ="number " placeholder="Điểm môn thứ ba " id="diem3">
+        </div>
+</div>
+</div>
+<button class="btn btn-success" id="btntinhdiem">Kết quả</button>
+<br>
+<br>
+<div class="alert alert-success">
+<p id="choraketqua">Kết quả:</p>
+</div>
+</div>
+<hr>
+<div class="container">
+<h3>Bài 2 : Tính tiền điện </h3>
+<div >
+<input type="text" placeholder="Nhập họ và tên " class="tiendien mr-4" id="hoten">
+<input type="number" placeholder="Nhập số Kwh" class=" tiendien ml-4" id="sokwh"> 
+</div>
+<br>
+<button class="btn btn-success" id="btntinhtiendien">Tính tiền</button>
+<br>
+<br>
+<div class="alert alert-success">
+    <p id="tiendienla">Kết quả:</p>
+    </div>
+</div>
+<div class="container">
+<h3> Bài 3 :Tính thuế thu nhập cá nhân</h3>
+<br>
+
+<div class="row">
+<div class="col-12">
+    <input type="text" placeholder="Nhập họ và tên " class="tiendien mr-4" id="hoten1">
+    <input type="number" placeholder="Tổng thu nhập năm " class=" tiendien ml-4" id="thunhapnam"> 
+    <input type="number" placeholder="Số người phụ thuộc " class=" tiendien ml-4" id="songuoiphuthuoc"> 
+</div>
+</div>
+<br>
+<button class="btn btn-success" id="btntinhtienthue" onclick="thuethunhap()">Tính tiền thuế </button>
+<br>
+<br>
+<div class="alert alert-success">
+    <p id="tienthuela">Kết quả:</p>
+    </div>
+
+</div>
+ <div class="container">
+<h3> Bài 4 : Tính tiền cáp</h3>
+<br>
+<h4>Nếu bạn muốn thay đổi (chọn khách hàng) vui lòng reload lại trang !</h4>
+<div class="row">
+<div class="col-12">
+<div>
+    <select class="form-control form-input" id="chonkhachhang" class="tuychon5" onchange ="luachon()">
+        <br>
+        <option  value="">Chọn loại khách hàng</option>
+        <option value="nhadan">Nhà dân</option>
+        <option value="doanhnghiep" style="display:block">Doanh nghiệp</option>
+     
+       </select>
+       </div>
+<div id="thean">
+       <label for="soketnoi"></label>
+       <input type="number" id="soketnoi" placeholder="sô kết nối ">
+    <input type="text" placeholder="Mã khách hàng" class=" tiendien ml-4" id="makhachhang"> 
+    <input type="text" placeholder="Số kênh cao cấp" class=" tiendien ml-4" id="sokenhcaocap"> 
+</div>
+</div>
+</div>
+<br>
+ <div>
+<button class="btn btn-success" id="btntinhcap" onclick ="Tinhtien()">Tính tiền thuế </button>
+</div>
+<br>
+<br>
+<div class="alert alert-success">
+    <p id="tinhtiencap">Kết quả:</p>
+    </div>
+</div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="./main.js"></script>
+  </body>
+</html>

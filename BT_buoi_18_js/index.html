@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <style>
+   
+    h1 {
+    text-align: center;
+    margin-top: 60px;
+    }
+    .alert {
+    padding-bottom: 30px;
+    }
+  .card {
+    margin: 0 200px;
+  }
+  .card-footer {
+  padding: 15px 0 ;
+  }
+  </style>
+  <body>
+
+
+    <h1> Bài tập mảng </h1>
+    <br>
+  <div>
+          <div class="card">
+            <div class="card-body">
+              <div class="form-group">
+                <label for=""> Nhập số  </label>
+                <input type="text" class="form-control" id="txtNumber">
+              </div>
+              <button class="btn btn-info"  onclick="themso()">Thêm số </button>
+  
+            </div>
+            <div class="card-footer">
+              <p class="text-success" id="inra"></p>
+            </div>
+          </div>
+      <br>
+     
+    <div class="accordion" id="accordionExample">
+      <div class="card">
+        <div class="card-header" id="headingOne">
+          <h2 class="mb-0">
+            <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              1️⃣   Tổng số dương
+            </button>
+          </h2>
+        </div>
+    
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+          <div class="card-body">
+           <button class="btn btn-info"> Tính tổng</button>
+          </div>
+          <div class="alert alert-success">
+        <span id="showketqua" class="lg-success"></span>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="headingTwo">
+          <h2 class="mb-0">
+            <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              2️⃣ Đếm số dương
+            </button>
+          </h2>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+          <div class="card-body">
+            <button class="btn btn-info"> Tính tổng</button>
+           </div>
+           <div class="alert alert-success">
+         <span id="showketqua" class="lg-success"></span>
+           </div>
+         </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="headingThree">
+          <h2 class="mb-0">
+            <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              3️⃣  Tìm số nhỏ nhất
+            </button>
+          </h2>
+        </div>
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+          <div class="card-body">
+            <button class="btn btn-info"> Tính tổng</button>
+           </div>
+           <div class="alert alert-success">
+         <span id="showketqua" class="lg-success"></span>
+           </div>
+         </div>
+        </div>
+        
+          <!-- card 4 -->
+         <div class="card">
+    <div class="card-header" id="headingFour">
+      <h2 class="mb-0">
+        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+          4️⃣ Tìm số dương nhỏ nhất
+        </button>
+      </h2>
+    </div>
+    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+      <div class="card-body">
+        <button class="btn btn-info"> Tính tổng</button>
+      </div>
+      <div class="alert alert-success">
+        <span id="showketqua" class="lg-success"></span>
+          </div>
+    </div>
+  </div>
+<!-- card5  -->
+<div class="card">
+  <div class="card-header" id="headingFive">
+    <h2 class="mb-0">
+      <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+        5️⃣ Tìm số chắn cuối cùng
+      </button>
+    </h2>
+  </div>
+  <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+    <div class="card-body">
+      <button class="btn btn-info"> Tính tổng</button>   </div>
+      <div class="alert alert-success">
+        <span id="showketqua" class="lg-success"></span>
+          </div>
+  </div>
+</div>
+<div class="card">
+  <div class="card-header" id="headingSix">
+    <h2 class="mb-0">
+      <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+        6️⃣ Đổi chỗ
+      </button>
+    </h2>
+  </div>
+  <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
+    <div class="card-body">
+      <button class="btn btn-info"> Tính tổng</button>
+
+    </div>
+    <div class="alert alert-success">
+      <span id="showketqua" class="lg-success"></span>
+        </div>
+  </div>
+</div>
+      <!-- card7 -->
+      <div class="card">
+        <div class="card-header" id="headingSeven">
+          <h2 class="mb-0">
+            <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+              7️⃣ Sắp xếp tăng dần
+            </button>
+          </h2>
+        </div>
+        <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordionExample">
+          <div class="card-body">
+            <button class="btn btn-info"> Tính tổng</button>   
+           </div>
+          <div class="alert alert-success">
+            <span id="showketqua" class="lg-success"></span>
+              </div>
+        </div>
+      </div>
+            <!-- Card 8 -->
+  <div class="card">
+    <div class="card-header" id="headingEight">
+      <h2 class="mb-0">
+        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+          8️⃣ Tìm số nguyên tố đầu tiên
+        </button>
+      </h2>
+    </div>
+    <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordionExample">
+      <div class="card-body">
+        <button class="btn btn-info"> Tính tổng</button>
+      </div>
+  
+    <div class="alert alert-success">
+  <span id="showketqua" class="lg-success"></span>
+    </div>
+    </div>
+  </div>
+    <!-- card 9  -->
+    <!-- Card 9 -->
+  <div class="card">
+    <div class="card-header" id="headingNine">
+      <h2 class="mb-0">
+        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+          9️⃣ Đếm số nguyên        
+        </button>
+      </h2>
+    </div>
+    <div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#accordionExample">
+      <div class="card-body">
+        <button class="btn btn-info"> Tính tổng</button>
+      </div>
+      <div class="alert alert-success">
+        <span id="showketqua" class="lg-success"></span>
+          </div>
+    </div>
+  </div>
+    
+  <div class="card">
+    <div class="card-header" id="headingTen">
+      <h2 class="mb-0">
+        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+          🔟 So sánh số lượng số âm và dương
+        </button>
+      </h2>
+    </div>
+    <div id="collapseTen" class="collapse" aria-labelledby="headingTen" data-parent="#accordionExample">
+      <div class="card-body">
+        <button class="btn btn-info"> Tính tổng</button>
+      </div>
+           <div class="alert alert-success">
+            <span id="showketqua" class="lg-success"></span>
+               </div>
+    </div>
+  </div>
+                 
+      </div>
+  
+<!-- <div class="row">
+<div class="col-6">
+<div class="card">
+    <div class="card__header"></div>
+    <div class="card_body">
+        <div class="form-group">
+            <label for="">Nhập số n: </label>
+            <input type="text" id="Number" class="form-control">
+        <br>
+      
+        </div>
+        <button class="btn btn-success">Tính</button>
+    </div>
+    <div class="card_footer"></div>
+</div>
+</div>
+<div class="col-6">
+    <button class="btn btn-success" id="btnthemso">Thêm số</button>
+</div>
+
+<h6>Tổng số dương</h6>
+<h6>Đếm số dương </h6>
+<h6>Tìm số nhỏ nhất </h6>
+<h6>Tìm số dương nhỏ nhất </h6>
+<h6>Tìm số chắn cuối cùng</h6>
+<h6>Đổi chỗ </h6>
+<h6>Sắp xếp tăng dần </h6>
+<h6>Số nguyên tố đầu tiên</h6>
+<h6>Đếm số nguyên tố</h6>
+<h6>So sánh lượng số âm và số dương </h6> -->
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="./main.js"></script>
+
+  </body>
+</html>
