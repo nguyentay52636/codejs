@@ -178,15 +178,16 @@ function bai10() {
     alert("vui lòng nhập giá trị cho mảng ! ");
     return;
   }
-  var dem1 = count_soduong(arrays);
-  var dem2 = count_soam(arrays);
+  var dem1 = count_soduong();
+  var dem2 = count_soam();
   if (dem1 > dem2) {
-    document.getElementById("sosanh").innerHTML = "Số âm" + "<" + "Số dương";
+    document.getElementById("sosanh").innerHTML = `Số âm < Số dương `;
   } else {
-    document.getElementById("sosanh").innerHTML = "Số dương" + "<" + "Số âm";
+    document.getElementById("sosanh").innerHTML = `Số dương < Số âm `;
   }
   if (dem1 === dem2) {
-    document.getElementById("sosanh").innerHTML = "Số âm " + "=" + "Số dương ";
+    document.getElementById("sosanh").innerHTML = `Số dương = Số âm`;
   }
 }
+// lỗi gì z anh nhỉ ?
 // function themso() ;
