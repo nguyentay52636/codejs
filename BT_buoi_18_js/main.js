@@ -82,6 +82,20 @@ const number1 = parseInt(prompt("input number 1 : "));
 const number2 = parseInt(prompt("input number 2 : "));
 bai6(arrays, number1, number2);
 */
+//bai6
+function bai6() {
+  var so1 = document.getElementById("nhapso1").value;
+  var so2 = document.getElementById("nhapso2").value;
+
+  if (so1 < arrays.length && so2 < arrays.length) {
+    var tmp = arrays[so1];
+    arrays[so1] = arrays[so2];
+    arrays[so2] = tmp;
+  }
+  var result = "Mảng sau khi swap  là " + arrays;
+  document.getElementById("swap2so").innerHTML = result;
+}
+
 //bai 7
 function bai7() {
   var n = arrays.length;
@@ -110,26 +124,42 @@ function bai7() {
 //   }
 //   return -1;
 // }
+// function bai8() {
+//   if (arrays.length === 0) {
+//     alert("vui lòng nhập giá trị cho mảng ! ");
+//     return;
+//   }
+
+//   for (var i = 0; i < arrays.length; i++) {
+//     if (isprime(arrays[i])) {
+
+//     }
+//     var result = "Số nguyên tố đầu tiên là : " + arrays;
+//     document.getElementById("ktsont").innerHTML = result;
+//   }f
+// }
 function bai8() {
   if (arrays.length === 0) {
-    alert("vui lòng nhập giá trị cho mảng ! ");
+    alert("Vui lòng nhập giá trị cho mảng!");
     return;
   }
+
   var first_isprime = null;
   for (var i = 0; i < arrays.length; i++) {
     if (isprime(arrays[i])) {
-      if (first_isprime === null || arrays[i] < first_isprime) {
-      }
+      first_isprime = arrays[i];
+      break; // Khi tìm thấy số nguyên tố, ngừng vòng lặp
     }
   }
+
   if (first_isprime === null) {
-    alert(" Không có số nguyên tố nào trong mảng ! ");
+    alert("Không có số nguyên tố nào trong mảng!");
   } else {
-    var result = "Số nguyên tố đầu tiên là : " + first_isprime;
+    var result = "Số nguyên tố đầu tiên là: " + first_isprime;
     document.getElementById("ktsont").innerHTML = result;
   }
 }
-function isprime() {
+function isprime(number) {
   if (number < 2) {
     return false;
   }
