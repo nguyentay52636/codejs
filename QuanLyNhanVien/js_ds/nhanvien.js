@@ -2,24 +2,44 @@ function Nhanvien(
   taikhoan,
   hoten,
   email,
+  matkhau,
   ngaylam,
   luongcoban,
   chucvu,
   tglam,
-  loainv,
-  luongcoban
+  loainv
 ) {
   this.taikhoan = taikhoan;
   this.hoten = hoten;
   this.email = email;
+  this.matkhau = matkhau;
   this.ngaylam = ngaylam;
   this.luongcoban = luongcoban;
   this.chucvu = chucvu;
   this.tglam = tglam;
   this.loainv = loainv;
-  this.luongcoban = 0;
-  this.luongCB = function () {
-    // this.luongcoban = () ;
+  this.tongLuong = 0;
+  this.tinhTongLuong = function () {
+    if (this.chucvu === "Sếp") {
+      this.tongLuong = this.luongcoban * 3;
+    } else if (this.chucvu === "Trưởng phòng") {
+      this.tongLuong = this.luongcoban * 2;
+    } else if (this.chucvu === "Nhân viên") {
+      this.tongLuong = this.luongcoban * 1;
+    } else {
+      this.tongLuong = 0;
+    }
+  };
+  this.xeploai = function () {
+    if (this.tglam >= 192) {
+      this.loainv = ` Nhân viên Xuất sắc `;
+    } else if (this.tglam < 192 && this.tglam >= 176) {
+      this.loainv = ` Nhân viên giỏi `;
+    } else if (this.tglam >= 160 && this.tglam < 176) {
+      this.loainv = `Nhân viên khá `;
+    } else {
+      this.loainv = `Nhân viên trung bình `;
+    }
   };
 }
 

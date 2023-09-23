@@ -1,6 +1,6 @@
-function Dsnhanvien(){
-this.arr = [] ; 
-this.themnhanvien(nv) {
-this.arr.push(nv) ; 
-} ; 
+function Dsnhanvien() {
+  this.arr = [];
+  this.addNV = function (nv) {
+    this.arr.push(nv);
+  };
 }
