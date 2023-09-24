@@ -292,7 +292,7 @@
 				<!-- Modal footer -->
 				<div class="modal-footer" id="modal-footer">
 					<button id="btnThemNV" type="button" class="btn btn-success" onclick="themnhanvien()">Thêm người dùng</button>
-					<button id="btnCapNhat" type="button" class="btn btn-success">Cập nhật</button>
+					<button id="btnCapNhat" type="button" class="btn btn-success" onclick="UpdateNV()">Cập nhật</button>
 					<button id="btnDong" type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
 				</div>
 
@@ -319,7 +319,7 @@
 
 	<!-- <script src="js/modal.js"></script> -->
 
-
+	
 	<script type="text/javascript">
 		$(document).ready(function () {
 			$('#sidebarCollapse').on('click', function () {
@@ -327,9 +327,10 @@
 			});
 		});
 	</script>
+
 	<script src="./js_ds/nhanvien.js"></script>
 	<script src="./js_ds/danhsachnhanvien.js"></script>
-	
+	<!-- <script src="./error/validation.js"></script> -->
 	<script src="./index_js/main.js"></script>
 </body>
 

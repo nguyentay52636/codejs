@@ -9,6 +9,16 @@ function information() {
   var luongcoban = document.getElementById("luongCB").value;
   var chucvu = document.getElementById("chucvu").value;
   var tglam = document.getElementById("gioLam").value;
+
+  //test
+  KiemTraTen(hoten, "tbTen", "Vui lòng không bỏ trống", "Tên phải là chữ ");
+  KiemTraRong(taikhoan, "tbTKNV", "Vui lòng không bỏ trống ");
+  KiemTraEmail(email, "tbEmail", "Email không đúng định dạng");
+  kiemTraDoDaiKyTu(taikhoan, 4, 6, "tbTKNV", "Vui lòng nhập từ 4 đến 6 ký tự");
+  SoGioLam(tglam, 80, 200, "tbGiolam", "Vui lòng không bỏ trống");
+  ChonChucVu(chucvu, "tbChucVu", "Vui lòng không bỏ trống");
+  Luong(luongcoban, 1000000, 20000000, "tbLuongCB", "Vui lòng không bỏ trống");
+  kiemTraPassword(matkhau, "tbMatKhau");
   var nhanvien = new Nhanvien(
     taikhoan,
     hoten,
@@ -26,23 +36,15 @@ function information() {
 
 function themnhanvien() {
   var nhanvien = information();
-  console.log(danhsachnhanvien.arr);
   if (nhanvien) {
     danhsachnhanvien.addNV(nhanvien);
     renderList(danhsachnhanvien.arr);
-    console.log(danhsachnhanvien.arr);
+
     setLocalStorage();
   }
 }
 function renderList(arr) {
   /**
-   *
-   * luca = [
-   *    {hoten:'phu',...}
-   *  {hoten:'phu',...}
-   *  {hoten:'phu',...}
-   * ]
-   *
    */
   var table = document.getElementById("tableDanhSach");
   var content = "";
@@ -56,14 +58,53 @@ function renderList(arr) {
     <td>${arr[i].chucvu}</td>
     <td>${arr[i].tongLuong}</td>
     <td>${arr[i].loainv}</td>
-    <td> <button class="btn btn-info">Delete</button> <td>
+    <td> <button class="btn btn-danger" onclick="XoaNV('${arr[i].taikhoan}')">Delete</button> <td>
+
+    <button class="btn btn-info" data-toggle="modal"
+    data-target="#myModal" onclick="SuaNV('${arr[i].taikhoan}')">Edit</button>
     </tr>`;
     table.innerHTML = content;
   }
 }
-//delete nhan vien
 
+/* */
+//delete nhan vien
+function XoaNV(taikhoan) {
+  danhsachnhanvien.DeleteNV(taikhoan);
+  renderList(danhsachnhanvien.arr);
+  console.log(danhsachnhanvien.arr);
+  setLocalStorage();
+}
+// sua
+function SuaNV(taikhoan) {
+  var nv = danhsachnhanvien.timNVByTaiKhoan(taikhoan);
+  document.getElementById("tknv").value = nv.taikhoan;
+  document.getElementById("tknv").disabled = "true";
+  document.getElementById("name").value = nv.hoten;
+  document.getElementById("email").value = nv.email;
+  document.getElementById("password").value = nv.matkhau;
+  document.getElementById("datepicker").value = nv.ngaylam;
+  document.getElementById("luongCB").value = nv.luongcoban;
+  document.getElementById("chucvu").value = nv.chucvu;
+  document.getElementById("gioLam").value = nv.tglam;
+}
 //CocalStorage ;
+function UpdateNV() {
+  var nv = information();
+  danhsachnhanvien.capnhapNV(nv);
+  renderList(danhsachnhanvien.arr);
+  setLocalStorage();
+  document.getElementById("btnDong").click();
+}
+//search NV  :
+
+document.getElementById("searchName").addEventListener("keyup", function () {
+  var keyword = document.getElementById("searchName").value;
+
+  var mangtimkiem = danhsachnhanvien.SearchNV(keyword);
+  console.log(mangtimkiem);
+  renderList(mangtimkiem);
+});
 
 function setLocalStorage() {
   var dataString = JSON.stringify(danhsachnhanvien.arr);
