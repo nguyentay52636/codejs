@@ -15,7 +15,7 @@ function KiemTraRong(value, idCanhBao, mess, mess1) {
   }
 }
 //kiem tra ten
-function KiemTraTen(value, idCanhBao, mess1, mess) {
+/*function KiemTraTen(value, idCanhBao, mess1, mess) {
   var domTheSpan = document.getElementById(idCanhBao);
   if (value == "") {
     domTheSpan.innerHTML = mess;
@@ -30,7 +30,23 @@ function KiemTraTen(value, idCanhBao, mess1, mess) {
     domTheSpan.innerHTML = "";
     return true;
   }
+}*/
+function KiemTraTen(value, idCanhBao, mess1, mess) {
+  var domTheSpan = document.getElementById(idCanhBao);
+  if (value == "") {
+    domTheSpan.innerHTML = mess;
+    domTheSpan.style.display = "block";
+    return false;
+  } else if (!/^[A-Za-z\u00C0-\u1EF9\s]+$/.test(value)) {
+    domTheSpan.innerHTML = mess1;
+    domTheSpan.style.display = "block";
+    return false;
+  } else {
+    domTheSpan.innerHTML = "";
+    return true;
+  }
 }
+
 // function KiemTraTaiKhoan(value, idCanhBao, mess) {
 //   var domTheSpan = document.getElementById(idCanhBao);
 //   if (value == "") {
