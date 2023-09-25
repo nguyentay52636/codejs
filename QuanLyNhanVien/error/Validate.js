@@ -42,7 +42,7 @@ function KiemTraTen(value, idCanhBao, mess1, mess) {
 //   }
 // }
 //kiem tra ki tu
-function kiemTraDoDaiKyTu(value, min, max, idCanhBao, mess, mess1) {
+function kiemTraTaiKhoan(value, min, max, idCanhBao, mess, mess1) {
   var domTheSpan = document.getElementById(idCanhBao);
   if (value.length < min || value.length > max) {
     domTheSpan.innerHTML = mess;
@@ -65,7 +65,7 @@ function KiemTraEmail(email, idCanhBao, mess, mess1) {
   var isValid = regexEmail.test(email);
   if (isValid) {
     domTheSpan.innerHTML = "";
-    return false;
+    return true;
   } else {
     domTheSpan.innerHTML = mess;
     domTheSpan.style.display = "block";
@@ -73,32 +73,44 @@ function KiemTraEmail(email, idCanhBao, mess, mess1) {
   if (email == "") {
     domTheSpan.innerHTML = mess1;
     domTheSpan.style.display = "block";
+    return false;
+  }
+}
+//datepicker
+//check date
+function KiemTraDate(value, idCanhBao, mess) {
+  var domTheSpan = document.getElementById(idCanhBao);
+  if (value == "") {
+    domTheSpan.innerHTML = mess;
+    domTheSpan.style.display = "block";
+    return false;
+  } else {
+    domTheSdom.innerHTML = "";
     return true;
   }
 }
-
 function SoGioLam(value, min, max, idCanhBao, mess, mess1) {
   var domTheSpan = document.getElementById(idCanhBao);
-  if (value.length < min || value.length > max) {
-    domTheSpan.innerHTML = mess1;
-    domTheSpan.style.display = "block";
-    return false;
-  } else if (value == "") {
+  if (value === "") {
     domTheSpan.innerHTML = mess;
     domTheSpan.style.display = "block";
+    return false;
+  } else if (value < min || value > max) {
+    domTheSpan.innerHTML = mess1;
+    return false;
   } else {
     domTheSpan.innerHTML = "";
     return true;
   }
 }
+
 // kiem tra khao tac nguoi dung
 function ChonChucVu(idSelect, idCanhBao, mess) {
   var domTheSpan = document.getElementById(idCanhBao);
   var domSelect = document.getElementById(idSelect).selectedIndex;
   if (domSelect == 0) {
-    domSelect.innerHTML = mess;
+    domTheSpan.innerHTML = mess;
     domTheSpan.style.display = "block";
-
     return false;
   } else {
     domTheSpan.innerHTML = "";
@@ -107,24 +119,27 @@ function ChonChucVu(idSelect, idCanhBao, mess) {
 }
 function Luong(value, min, max, idCanhBao, mess, mess1) {
   var domTheSpan = document.getElementById(idCanhBao);
-  if (value.length < min || value.length > max) {
-    domTheSpan.innerHTML = mess;
-    domTheSpan.style.display = "block";
-    return false;
-  } else if (value == "") {
+  if (value === "") {
     domTheSpan.innerHTML = mess1;
     domTheSpan.style.display = "block";
-
+    return false;
+  } //else if (value.length < min || value.length > max)
+  else if (value < min || value > max) {
+    // Lương thì lấy value của nó so sánh với min max chứ lấy length ăn cc à :)))
+    domTheSpan.innerHTML = mess;
+    domTheSpan.style.display = "block";
     return false;
   } else {
     domTheSpan.innerHTML = "";
     return true;
   }
 }
+
 function kiemTraPassword(value, idCanhBao) {
   var domTheSpan = document.getElementById(idCanhBao);
   if (value.length < 6 || value.length > 10) {
     domTheSpan.innerHTML = "Mật khẩu phải từ 6-10 ký tự";
+    domTheSpan.style.display = "block";
   } else if (!/[0-9]/.test(value)) {
     domTheSpan.innerHTML = "Mật khẩu phải chứa ít nhất 1 ký tự số";
     domTheSpan.style.display = "block";

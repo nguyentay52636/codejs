@@ -17,6 +17,9 @@ function information() {
     "Tên phải là chữ ",
     "Vui lòng không bỏ trống"
   );
+  console.log("KiemTraTen", isValid);
+
+  KiemTraDate(tglam, "tbNgay", "Vui lòng không bỏ trống ");
   // KiemTraRong(taikhoan, "tbTKNV", "Vui lòng không bỏ trống ");
   isValid &= KiemTraEmail(
     email,
@@ -24,6 +27,8 @@ function information() {
     "Email không đúng định dạng",
     "Vui lòng không bỏ trống"
   );
+  console.log("KiemTraEmail", isValid);
+
   //isValid &= KiemTraTaiKhoan(taikhoan, "tbTKNV", "Vui lòng không bỏ trống ");
   // isValid &= KiemTraRong(
   //   taikhoan,
@@ -31,7 +36,7 @@ function information() {
   //   "Vui lòng không bỏ trống",
   //   "Vui lòng nhập từ 4 đến 6 ký tự"
   // );
-  isValid &= kiemTraDoDaiKyTu(
+  isValid &= kiemTraTaiKhoan(
     taikhoan,
     4,
     6,
@@ -39,7 +44,8 @@ function information() {
     "Vui lòng nhập từ 4 đến 6 ký tự",
     "Vui lòng không bỏ trống"
   );
-  ("Số giờ làm trong tháng 80 - 200 giờ");
+  console.log("kiemTraTaiKhoan", isValid);
+
   // isValid &= KiemTraRong(taikhoan, "tbTKNV", "Vui lòng không bỏ trống ");
   isValid &= SoGioLam(
     tglam,
@@ -49,16 +55,26 @@ function information() {
     "Vui lòng không bỏ trống",
     "Số giờ làm trong tháng 80 - 200 giờ"
   );
+  console.log("SoGioLam", isValid);
+
   isValid &= ChonChucVu("chucvu", "tbChucVu", "Vui lòng không bỏ trống");
+
   isValid &= Luong(
     luongcoban,
     1000000,
     20000000,
     "tbLuongCB",
-    "Vui lòng không bỏ trống",
-    "Lương ít nhất là 1triệu và lớn nhất là 20 triệu "
+    "Lương ít nhất là 1triệu và lớn nhất là 20 triệu ",
+    "Vui lòng không bỏ trống"
   );
+
   isValid &= kiemTraPassword(matkhau, "tbMatKhau");
+
+  /**
+   * LUCA DEP TRAI VL
+   * LUCA DEP TRAI VL
+   */
+
   //kiemTraPassword(matkhau, "tbMatKhau");
   if (!isValid) {
     return null;
@@ -75,6 +91,7 @@ function information() {
   );
   nhanvien.tinhTongLuong();
   nhanvien.xeploai();
+  console.log(ngaylam);
   return nhanvien;
 }
 
