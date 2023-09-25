@@ -44,7 +44,7 @@ function KiemTraTen(value, idCanhBao, mess1, mess) {
 //kiem tra ki tu
 function kiemTraTaiKhoan(value, min, max, idCanhBao, mess, mess1) {
   var domTheSpan = document.getElementById(idCanhBao);
-  if (value.length < min || value.length > max) {
+  if (value < min || value > max) {
     domTheSpan.innerHTML = mess;
     domTheSpan.style.display = "block";
     return false;
@@ -80,12 +80,12 @@ function KiemTraEmail(email, idCanhBao, mess, mess1) {
 //check date
 function KiemTraDate(value, idCanhBao, mess) {
   var domTheSpan = document.getElementById(idCanhBao);
-  if (value == "") {
+  if (value === "") {
     domTheSpan.innerHTML = mess;
     domTheSpan.style.display = "block";
     return false;
   } else {
-    domTheSdom.innerHTML = "";
+    domTheSpan.innerHTML = "";
     return true;
   }
 }
@@ -123,9 +123,7 @@ function Luong(value, min, max, idCanhBao, mess, mess1) {
     domTheSpan.innerHTML = mess1;
     domTheSpan.style.display = "block";
     return false;
-  } //else if (value.length < min || value.length > max)
-  else if (value < min || value > max) {
-    // Lương thì lấy value của nó so sánh với min max chứ lấy length ăn cc à :)))
+  } else if (value < min || value > max) {
     domTheSpan.innerHTML = mess;
     domTheSpan.style.display = "block";
     return false;
@@ -137,7 +135,7 @@ function Luong(value, min, max, idCanhBao, mess, mess1) {
 
 function kiemTraPassword(value, idCanhBao) {
   var domTheSpan = document.getElementById(idCanhBao);
-  if (value.length < 6 || value.length > 10) {
+  if (value < 6 || value > 10) {
     domTheSpan.innerHTML = "Mật khẩu phải từ 6-10 ký tự";
     domTheSpan.style.display = "block";
   } else if (!/[0-9]/.test(value)) {

@@ -11,6 +11,8 @@ function information() {
   var tglam = document.getElementById("gioLam").value;
   var isValid = true;
   //test
+  //date
+
   isValid &= KiemTraTen(
     hoten,
     "tbTen",
@@ -19,7 +21,6 @@ function information() {
   );
   console.log("KiemTraTen", isValid);
 
-  KiemTraDate(tglam, "tbNgay", "Vui lòng không bỏ trống ");
   // KiemTraRong(taikhoan, "tbTKNV", "Vui lòng không bỏ trống ");
   isValid &= KiemTraEmail(
     email,
@@ -44,7 +45,7 @@ function information() {
     "Vui lòng nhập từ 4 đến 6 ký tự",
     "Vui lòng không bỏ trống"
   );
-  console.log("kiemTraTaiKhoan", isValid);
+  // console.log("kiemTraTaiKhoan", isValid);
 
   // isValid &= KiemTraRong(taikhoan, "tbTKNV", "Vui lòng không bỏ trống ");
   isValid &= SoGioLam(
@@ -55,10 +56,10 @@ function information() {
     "Vui lòng không bỏ trống",
     "Số giờ làm trong tháng 80 - 200 giờ"
   );
-  console.log("SoGioLam", isValid);
+  // console.log("SoGioLam", isValid);
 
   isValid &= ChonChucVu("chucvu", "tbChucVu", "Vui lòng không bỏ trống");
-
+  isValid &= KiemTraDate(tglam, "tbNgay", "Vui lòng không bỏ trống ");
   isValid &= Luong(
     luongcoban,
     1000000,
@@ -70,10 +71,7 @@ function information() {
 
   isValid &= kiemTraPassword(matkhau, "tbMatKhau");
 
-  /**
-   * LUCA DEP TRAI VL
-   * LUCA DEP TRAI VL
-   */
+  //** */
 
   //kiemTraPassword(matkhau, "tbMatKhau");
   if (!isValid) {
